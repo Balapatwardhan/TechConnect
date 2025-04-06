@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechConnect | Login</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body class="login-page">
+    <div id="navbar-container"></div>
+
+    <div class="login-container">
+        <h1 class="title">TechConnect</h1>
+        <p class="subtitle">Connecting You to the Best Tech Events & Collaborations</p>
+
+        <form class="login-form">
+            <input type="email" placeholder="Enter your email" required>
+            <input type="password" placeholder="Enter your password" required>
+            <button type="submit">Login</button>
+        </form>
+
+        <p class="signup-text">New here? <a href="#">Sign up</a></p>
+    </div>
+
+       <script>
+        $(document).ready(function(){
+            $("#navbar-container").load("navbar.html")
+        });
+    </script>
+</body>
+</html>

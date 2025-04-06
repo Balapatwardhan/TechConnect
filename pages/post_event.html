@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post an Event | TechConnect</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body class="post-event-page">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <div id="navbar-container"></div>
+
+    <!-- <header class="navbar">
+        <h1 class="logo">TechConnect</h1>
+        <nav>
+            <ul>
+                <li><a href="dashboard.html">Home</a></li>
+                <li><a href="events.html">View Events</a></li>
+                <li><a href="#">Logout</a></li>
+            </ul>
+        </nav>
+    </header> -->
+
+    <section class="form-container">
+        <h2>📢 Post a New Event</h2>
+        <form action="#" method="POST" id="eventForm">
+            <label for="event-title">Event Title:</label>
+            <input type="text" id="event-title" name="event-title" placeholder="Enter event name" required>
+
+            <label for="event-date">Date:</label>
+            <input type="date" id="event-date" name="event-date" required>
+
+            <label for="event-location">Location:</label>
+            <input type="text" id="event-location" name="event-location" placeholder="Enter venue or 'Online'" required>
+
+            <label for="event-category">Category:</label>
+            <select id="event-category" name="event-category">
+                <option value="hackathon">Hackathon</option>
+                <option value="conference">Conference</option>
+                <option value="workshop">Workshop</option>
+                <option value="meetup">Meetup</option>
+            </select>
+
+            <label for="event-desc">Event Description:</label>
+            <textarea id="event-desc" name="event-desc" placeholder="Write a brief description..." required></textarea>
+
+            <label for="register-link">Registration Link:</label>
+            <input type="url" id="register-link" name="register-link" placeholder="Enter registration link (if any)">
+
+            <button type="submit">Post Event 🚀</button>
+        </form>
+    </section>
+
+    <script>
+        $(document).ready(function(){
+            $("#navbar-container").load("navbar.html")
+        });
+    </script>
+</body>
+</html>

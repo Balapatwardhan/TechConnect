@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechConnect | Dashboard</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body class="dashboard-page">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+     <div id="navbar-container"></div>
+    <!-- <header class="navbar">
+        <h1 class="logo">TechConnect</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="my_profile.html">My Profile</a></li>
+                <li><a href="#">Logout</a></li>
+            </ul>
+        </nav>
+    </header> -->
+
+    <section class="dashboard-container">
+        <h2>Welcome to TechConnect</h2>
+        <p>Find & Participate in the Best Hackathons and Projects</p>
+
+        <div class="options">
+            <a href="post_project.html" class="card">📅 Post a Project </a>
+            <a href="post_event.html" class="card">📅 Post an Event</a>
+            <a href="events.html" class="card">🚀 View Hackathons/Tech events</a>
+            <a href="projects.html" class="card">💡 join Project Teams </a>
+        </div>
+    </section>
+
+    <script>
+        $(document).ready(function(){
+            $("#navbar-container").load("navbar.html")
+        });
+    </script>
+</body>
+</html>
