@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechConnect - Connect, Collaborate, Create</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        .hero-section {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+            color: white;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .feature-card {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section {
+            text-align: center;
+            padding: 4rem 2rem;
+            background-color: #f3f4f6;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        .cta-button {
+            padding: 1rem 2rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .primary-button {
+            background-color: #6366f1;
+            color: white;
+        }
+
+        .secondary-button {
+            background-color: white;
+            color: #6366f1;
+            border: 2px solid #6366f1;
+        }
+
+        .primary-button:hover {
+            background-color: #4f46e5;
+        }
+
+        .secondary-button:hover {
+            background-color: #f3f4f6;
+        }
+
+        .stats-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            padding: 4rem 2rem;
+            background-color: white;
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-size: 2.5rem;
+            color: #6366f1;
+            margin-bottom: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .cta-buttons {
+                flex-direction: column;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="navbar-container"></div>
+
+    <section class="hero-section">
+        <h1>Welcome to TechConnect</h1>
+        <p>Connect with tech enthusiasts, join exciting events, and showcase your projects</p>
+    </section>
+
+    <section class="features-grid">
+        <div class="feature-card">
+            <div class="feature-icon">🎯</div>
+            <h2>Tech Events</h2>
+            <p>Discover and join workshops, conferences, hackathons, and meetups.</p>
+            <a href="pages/events.php" class="cta-button primary-button">Browse Events</a>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon">💡</div>
+            <h2>Projects</h2>
+            <p>Showcase your projects and find collaborators for new ideas.</p>
+            <a href="pages/projects.php" class="cta-button primary-button">View Projects</a>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon">👥</div>
+            <h2>Community</h2>
+            <p>Connect with like-minded developers and tech enthusiasts.</p>
+            <a href="pages/dashboard.php" class="cta-button primary-button">Join Community</a>
+        </div>
+    </section>
+
+    <section class="stats-section">
+        <div class="stat-item">
+            <h3>500+</h3>
+            <p>Active Members</p>
+        </div>
+        <div class="stat-item">
+            <h3>100+</h3>
+            <p>Events Hosted</p>
+        </div>
+        <div class="stat-item">
+            <h3>250+</h3>
+            <p>Projects Shared</p>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <h2>Ready to Get Started?</h2>
+        <p>Join our community of tech enthusiasts and start your journey today!</p>
+        <div class="cta-buttons">
+            <a href="pages/login.php" class="cta-button primary-button">Login</a>
+            <a href="pages/register.php" class="cta-button secondary-button">Sign Up</a>
+        </div>
+    </section>
+
+    <script>
+        $(document).ready(function(){
+            $("#navbar-container").load("pages/navbar.html");
+        });
+    </script>
+</body>
+</html>

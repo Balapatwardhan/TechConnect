@@ -22,5 +22,137 @@
         $("#navbar-container").load("navbar.html")
     });
 </script>
+
+<nav class="navbar">
+    <div class="nav-brand">
+        <a href="/TechConnect">TechConnect</a>
+    </div>
+    <div class="nav-links">
+        <a href="/TechConnect/pages/dashboard.php">Dashboard</a>
+        <a href="/TechConnect/pages/events.php">Events</a>
+        <a href="/TechConnect/pages/projects.php">Projects</a>
+        <a href="/TechConnect/pages/post_event.php">Post Event</a>
+        <a href="/TechConnect/pages/post_project.php">Post Project</a>
+        <div class="auth-links">
+            <a href="/TechConnect/pages/login.php" class="login-btn">Login</a>
+            <a href="/TechConnect/pages/register.php" class="signup-btn">Sign Up</a>
+        </div>
+    </div>
+    <div class="menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</nav>
+
+<style>
+.navbar {
+    background-color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.nav-brand a {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #6366f1;
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: #4b5563;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #6366f1;
+}
+
+.auth-links {
+    display: flex;
+    gap: 1rem;
+    margin-left: 2rem;
+}
+
+.login-btn, .signup-btn {
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.login-btn {
+    color: #6366f1;
+    border: 2px solid #6366f1;
+}
+
+.signup-btn {
+    background-color: #6366f1;
+    color: white;
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    width: 25px;
+    height: 2px;
+    background-color: #4b5563;
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: white;
+        flex-direction: column;
+        padding: 1rem;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .auth-links {
+        margin: 1rem 0;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .login-btn, .signup-btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+</style>
+
+<script>
+document.querySelector('.menu-toggle').addEventListener('click', function() {
+    document.querySelector('.nav-links').classList.toggle('active');
+});
+</script>
 </body>
 </html>
