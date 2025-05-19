@@ -33,7 +33,9 @@ CREATE TABLE IF NOT EXISTS events (
 CREATE TABLE IF NOT EXISTS projects (
     id INT AUTO_INCREMENT PRIMARY KEY,
     title VARCHAR(255) NOT NULL,
+    skills_needed VARCHAR(255),
     description TEXT NOT NULL,
+    contact_info VARCHAR(255),
     technologies VARCHAR(255),
     github_link VARCHAR(255),
     user_id INT,
@@ -76,4 +78,4 @@ INSERT INTO event_registrations (event_id, user_id, status) VALUES
 (1, 2, 'registered'),
 (2, 1, 'registered'),
 (3, 1, 'registered'),
-(3, 2, 'registered'); 
+(3, 2, 'registered');

@@ -1,42 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TechConnect | Dashboard</title>
     <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/navbar.css"> <!-- if you have separate CSS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        /* General reset and body style */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #0e1a2b;
+    color: #ffffff;
+}
+
+/* Sticky navbar with shadow */
+.navbar {
+    position: sticky; /* You can also use fixed if preferred */
+    top: 0;
+    z-index: 999;
+    width: 100%;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+/* Ensure content below navbar is visible */
+.dashboard-container,
+.form-container,
+.projects-list,
+.events-list {
+    padding-top: 100px; /* Adjust to match navbar height + spacing */
+}
+
+/* Dashboard section */
+.dashboard-container {
+    text-align: center;
+    padding: 2rem;
+}
+
+/* Dashboard cards layout */
+.options {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+/* Card buttons */
+.card {
+    background-color: #1f2f46;
+    color: #ffffff;
+    padding: 1.2rem 2rem;
+    border-radius: 12px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s, background-color 0.3s;
+}
+
+.card:hover {
+    background-color: #2d4063;
+    transform: translateY(-4px);
+}
+
+/* Responsive tweak */
+@media (max-width: 768px) {
+    .options {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 80%;
+        text-align: center;
+    }
+}
+
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 999;
+            width: 100%;
+            background: #fff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+            display: flex;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+        body {
+            margin: 0;
+            font-family: sans-serif;
+        }
+        .dashboard-container,
+        .form-container,
+        .projects-list,
+        .events-list {
+            margin-top: 90px; /* Adjust if your navbar is taller/shorter */
+        }
+    </style>
 </head>
 <body class="dashboard-page">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-     <div id="navbar-container"></div>
-    <!-- <header class="navbar">
-        <h1 class="logo">TechConnect</h1>
-        <nav>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="my_profile.html">My Profile</a></li>
-                <li><a href="#">Logout</a></li>
-            </ul>
-        </nav>
-    </header> -->
+    <div id="navbar-container"></div>
 
     <section class="dashboard-container">
         <h2>Welcome to TechConnect</h2>
         <p>Find & Participate in the Best Hackathons and Projects</p>
 
         <div class="options">
-            <a href="post_project.html" class="card">📅 Post a Project </a>
-            <a href="post_event.html" class="card">📅 Post an Event</a>
-            <a href="events.html" class="card">🚀 View Hackathons/Tech events</a>
-            <a href="projects.html" class="card">💡 join Project Teams </a>
+            <a href="post_project.php" class="card">📅 Post a Project </a>
+            <a href="post_event.php" class="card">📅 Post an Event</a>
+            <a href="events.php" class="card">🚀 View Hackathons/Tech events</a>
+            <a href="viewprojects.php" class="card">💡 join Project Teams </a>
         </div>
     </section>
 
     <script>
         $(document).ready(function(){
-            $("#navbar-container").load("navbar.html")
+            $("#navbar-container").load("navbar.html", function() {
+                document.getElementById('menuToggle').addEventListener('click', function() {
+                    document.getElementById('navLinks').classList.toggle('active');
+                });
+            });
         });
     </script>
 </body>

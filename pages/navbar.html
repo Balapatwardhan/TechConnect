@@ -1,158 +1,146 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-</head>
-<body>
-    
-    <header class="navbar">
-    <h1 class="logo">Tech Connect</h1>
-    <nav>
-        <ul>
-            
-            <li><a href="dashboard.html">Home</a> </li>
-            <li><a href="my_profile.html">My Profile</a> </li>
-            <li><a href="logout.html">Logout</a> </li>
-        </ul>
-    </nav>
-</header>
-<script>
-    $(document).ready(function(){
-        $("#navbar-container").load("navbar.html")
-    });
-</script>
-
 <nav class="navbar">
     <div class="nav-brand">
-        <a href="/TechConnect">TechConnect</a>
+        <button onclick="location.href='dashboard.html'" class="nav-btn brand-btn">TechConnect</button>
     </div>
-    <div class="nav-links">
-        <a href="/TechConnect/pages/dashboard.php">Dashboard</a>
-        <a href="/TechConnect/pages/events.php">Events</a>
-        <a href="/TechConnect/pages/projects.php">Projects</a>
-        <a href="/TechConnect/pages/post_event.php">Post Event</a>
-        <a href="/TechConnect/pages/post_project.php">Post Project</a>
+    <div class="nav-links" id="navLinks">
+        <button onclick="location.href='dashboard.html'" class="nav-btn">Dashboard</button>
+        <button onclick="location.href='events.php'" class="nav-btn">Events</button>
+        <button onclick="location.href='viewprojects.php'" class="nav-btn">Projects</button>
+        <button onclick="location.href='post_event.php'" class="nav-btn">Post Event</button>
+        <button onclick="location.href='post_project.php'" class="nav-btn">Post Project</button>
         <div class="auth-links">
-            <a href="/TechConnect/pages/login.php" class="login-btn">Login</a>
-            <a href="/TechConnect/pages/register.php" class="signup-btn">Sign Up</a>
+            <button onclick="location.href='login.php'" class="login-btn">Login</button>
+            <button onclick="location.href='signup.php'" class="signup-btn">Sign Up</button>
         </div>
     </div>
-    <div class="menu-toggle">
+    <div class="menu-toggle" id="menuToggle">
         <span></span>
         <span></span>
         <span></span>
     </div>
 </nav>
 
+
 <style>
-.navbar {
-    background-color: white;
-    padding: 1rem 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-.nav-brand a {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #6366f1;
-    text-decoration: none;
-}
-
-.nav-links {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-}
-
-.nav-links a {
-    color: #4b5563;
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s ease;
-}
-
-.nav-links a:hover {
-    color: #6366f1;
-}
-
-.auth-links {
-    display: flex;
-    gap: 1rem;
-    margin-left: 2rem;
-}
-
-.login-btn, .signup-btn {
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
-    font-weight: bold;
-}
-
-.login-btn {
-    color: #6366f1;
-    border: 2px solid #6366f1;
-}
-
-.signup-btn {
-    background-color: #6366f1;
-    color: white;
-}
-
-.menu-toggle {
-    display: none;
-    flex-direction: column;
-    gap: 6px;
-    cursor: pointer;
-}
-
-.menu-toggle span {
-    width: 25px;
-    height: 2px;
-    background-color: #4b5563;
-    transition: all 0.3s ease;
-}
-
-@media (max-width: 768px) {
-    .menu-toggle {
+    .navbar {
+        position: fixed;
+        top: 0;
+        z-index: 999;
+        background-color: white;
+        padding: 1rem 2rem;
         display: flex;
-    }
-
-    .nav-links {
-        display: none;
-        position: absolute;
-        top: 70px;
-        left: 0;
-        right: 0;
-        background: white;
-        flex-direction: column;
-        padding: 1rem;
+        justify-content: space-between;
+        align-items: center;
         box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
 
-    .nav-links.active {
+    body {
+        margin: 0;
+        font-family: sans-serif;
+    }
+
+    .nav-brand .brand-btn {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #6366f1;
+        background: none;
+        border: none;
+        cursor: pointer;
+        text-decoration: none;
+    }
+
+    .nav-links {
         display: flex;
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+    .nav-btn {
+        background: none;
+        border: none;
+        color: #4b5563;
+        font-weight: 500;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: color 0.3s ease;
+        padding: 0;
+    }
+
+    .nav-btn:hover, .brand-btn:hover {
+        color: #6366f1;
     }
 
     .auth-links {
-        margin: 1rem 0;
-        flex-direction: column;
-        width: 100%;
+        display: flex;
+        gap: 1rem;
+        margin-left: 2rem;
     }
 
     .login-btn, .signup-btn {
-        width: 100%;
-        text-align: center;
+        padding: 0.4rem 1rem;
+        border-radius: 5px;
+        font-weight: 500;
+        border: none;
+        cursor: pointer;
+        font-size: 0.95rem;
     }
-}
+
+    .login-btn {
+        color: #6366f1;
+        border: 2px solid #6366f1;
+        background: transparent;
+    }
+
+    .signup-btn {
+        background-color: #6366f1;
+        color: white;
+    }
+
+    .menu-toggle {
+        display: none;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+    }
+
+    .menu-toggle span {
+        width:40x;
+        height: 2px;
+        background-color: #374151;
+        transition: all 0.3s ease;
+    }
+
+    @media (max-width: 768px) {
+        .menu-toggle {
+            display: flex;
+        }
+
+        .nav-links {
+            display: none;
+            position: absolute;
+            top: 70px;
+            left: 0;
+            right: 0;
+            background: #fff;
+            flex-direction: column;
+            padding: 1rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .nav-links.active {
+            display: flex;
+        }
+
+        .auth-links {
+            margin: 1rem 0;
+            flex-direction: column;
+            width: 100%;
+        }
+
+        .login-btn, .signup-btn {
+            width: 100%;
+            text-align: center;
+        }
+    }
 </style>
 
-<script>
-document.querySelector('.menu-toggle').addEventListener('click', function() {
-    document.querySelector('.nav-links').classList.toggle('active');
-});
-</script>
-</body>
-</html>

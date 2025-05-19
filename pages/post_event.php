@@ -41,6 +41,123 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Post an Event | TechConnect</title>
+  <style>
+/* Reset & Base */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #0e1a2b;
+    color: #ffffff;
+}
+
+/* Sticky Navbar */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    width: 100%;
+    background: #ffffff;
+    color: #000;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+    display: flex;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+/* Container */
+.form-container {
+    max-width: 650px;
+    margin: 100px auto 40px;
+    background-color: #1c2a40;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+/* Headings */
+.form-container h2 {
+    text-align: center;
+    color: #00d9ff;
+    margin-bottom: 1.5rem;
+}
+
+/* Form Elements */
+label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="url"],
+select,
+textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 8px;
+    margin-bottom: 1.2rem;
+    background-color: #e2e8f0;
+    color: #000;
+    font-size: 0.95rem;
+    resize: vertical;
+}
+
+/* Dropdown style */
+select {
+    appearance: none;
+    background-color: #e2e8f0;
+    padding-right: 1.5rem;
+}
+
+/* Submit Button */
+button[type="submit"] {
+    background-color: #00d9ff;
+    color: #000;
+    font-weight: bold;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 1rem;
+    transition: background 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #00b3cc;
+}
+
+/* Message Box */
+.message {
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    border-radius: 8px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.message.success {
+    background-color: #c6f6d5;
+    color: #22543d;
+}
+
+.message.error {
+    background-color: #fed7d7;
+    color: #742a2a;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .form-container {
+        margin: 90px 1rem 30px;
+        padding: 1.5rem;
+    }
+}
+</style>
+
     <link rel="stylesheet" href="../assets/css/styles.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <style>
@@ -101,10 +218,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </form>
     </section>
 
-    <script>
-        $(document).ready(function(){
-            $("#navbar-container").load("navbar.html");
+    
+
+<link rel="stylesheet" href="assets/css/navbar.css"> <!-- if you have separate CSS -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $("#navbar-container").load("navbar.html", function() {
+            document.getElementById('menuToggle').addEventListener('click', function() {
+                document.getElementById('navLinks').classList.toggle('active');
+            });
         });
-    </script>
+    });
+</script>
 </body>
 </html> 

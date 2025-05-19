@@ -15,7 +15,7 @@ try {
     $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 
     // Just for testing:
-    echo "✅ Connected to techconnect database successfully!";
+    // echo "✅ Connected to techconnect database successfully!";
 } catch (PDOException $e) {
     echo "❌ Connection failed: " . $e->getMessage();
 }
