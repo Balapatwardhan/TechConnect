@@ -29,7 +29,7 @@ body {
 .form-container,
 .projects-list,
 .events-list {
-    margin-top: 90px; /* Adjust if your navbar is taller/shorter */
+    margin-top: 90px;
 }
 
 .project-grid {
@@ -42,26 +42,31 @@ body {
 }
 
 .project-card {
-    background: white;
+    background: #ffffff;
     border-radius: 10px;
     padding: 1.5rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.08);
     transition: transform 0.2s ease;
+    color: #333; /* dark text for readability */
 }
 
-.project-card:hover {
-    transform: translateY(-5px);
+.project-card h3 {
+    margin-top: 0;
+    font-size: 1.3rem;
+    color: #222; /* darker for title */
 }
 
 .projects-list h2 {
     text-align: center;
     margin-top: 2rem;
-}
-body.projects-page {
-    background-color: #f9fafb;
+    color: white; /* title on dark bg */
 }
 
+body.projects-page {
+    background-color: rgb(24, 6, 62); /* dark background */
+}
 </style>
+
     <link rel="stylesheet" href="../assets/css/styles.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>

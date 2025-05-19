@@ -13,18 +13,6 @@ $events = $stmt->fetchAll();
     <title>Events | TechConnect</title>
     <style>
 .event-grid {
-    display: grid !important;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-    padding: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-</style>
-
-    <style>
-        .event-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 1.5rem;
@@ -37,17 +25,25 @@ $events = $stmt->fetchAll();
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.05);
     transition: transform 0.2s ease;
+    color: #333; /* ✅ Make text visible */
 }
 
-.event-card:hover {
-    transform: translateY(-5px);
+.event-card h3 {
+    color: #111; /* ✅ Darker heading */
+    margin-top: 0;
 }
 
 .events-list h2 {
     text-align: center;
     margin-bottom: 2rem;
+    color: #fff; /* ✅ Visible on dark background */
 }
+
+body.events-page {
    
+    background-color: #0e1a2b;
+}
+
 .navbar {
     position: sticky;
     top: 0;
@@ -57,19 +53,21 @@ $events = $stmt->fetchAll();
     box-shadow: 0 2px 4px rgba(0,0,0,0.08);
     display: flex;
     align-items: center;
-    /* padding: 1rem 2rem; */
 }
+
 body {
     margin: 0;
     font-family: sans-serif;
 }
+
 .dashboard-container,
 .form-container,
 .projects-list,
 .events-list {
-    margin-top: 0px; /* Adjust if your navbar is taller/shorter */
+    margin-top: 90px;
 }
 </style>
+
     <link rel="stylesheet" href="../assets/css/styles.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
